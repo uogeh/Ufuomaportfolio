@@ -11,28 +11,25 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #636262;
+  background-color: #454444;
   color: white;
 }
 
 .logo {
   font-weight: bold;
   font-size: 1.5rem;
+  color: #0077cc;
 }
 
 /* Desktop nav links */
 .nav-links {
-  position: fixed;
-  top: 60px;
-  right: 0;
-  background-color: #000;
-  width: 200px;
-  height: auto; /* Use auto height instead of full-screen */
-  max-height: 90vh; /* So it doesn't cover the full screen */
-  overflow-y: auto;
-  z-index: 1000; /* Keep it above content */
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
-
 
 .nav-links a {
   color: white;
@@ -40,7 +37,7 @@ body {
   font-weight: 500;
 }
 
-/* Hide hamburger by default */
+/* Hide hamburger by default (desktop) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -58,9 +55,9 @@ body {
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
-    top: 60px; /* height of navbar */
+    top: 60px;
     right: 0;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
     height: calc(100vh - 60px);
     width: 200px;
     flex-direction: column;
@@ -70,23 +67,16 @@ body {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
+    z-index: 1000;
   }
 
-  /* Show nav when active */
   .nav-links.active {
     transform: translateX(0);
   }
 
-  /* Show hamburger */
   .hamburger {
     display: flex;
   }
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #0077cc;
 }
 
 .hero {
@@ -139,13 +129,11 @@ body {
   background-color: #0056b3;
 }
 
-
 section {
   padding: 2rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   background-color: rgb(0, 0, 0);
-  margin-bottom: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -156,13 +144,15 @@ h2 {
   padding-bottom: 0.25rem;
 }
 
-.skills-grid, .projects-grid {
+.skills-grid,
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-.skill-card, .project-card {
+.skill-card,
+.project-card {
   background-color: #f9f9f9;
   padding: 1.25rem;
   border-radius: 6px;
@@ -170,18 +160,17 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-.skill-card:hover, .project-card:hover {
+.skill-card:hover,
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
 
 .projects {
   padding: 30px 20px;
   background-color: #000000;
   text-align: left;
 }
-
 
 .projects-grid {
   display: grid;
@@ -191,30 +180,12 @@ h2 {
   margin: 0 auto;
 }
 
-.project-card {
-  background-color: #f9f9f9;
-  padding: 1.25rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .project-card img {
   width: 100%;
   height: 200px;
   object-fit: fill;
   border-radius: 6px;
   margin-bottom: 1rem;
-}
-
-.project-content {
-  padding: 0; /* Padding already handled in .project-card */
 }
 
 .project-content h3 {
@@ -242,8 +213,6 @@ h2 {
   background-color: #0056b3;
 }
 
-
-
 .contact-info {
   list-style: none;
   padding: 0;
@@ -262,16 +231,18 @@ h2 {
 .contact-info a:hover {
   text-decoration: underline;
 }
+
 .contact .social-icons a {
   margin: 0 10px;
   color: #007bff;
   font-size: 1.5rem;
   text-decoration: none;
 }
+
 .contact {
- 
   background-color: #ffffff;
 }
+
 .contact .h2 {
   margin-bottom: 1rem;
   color: #0077cc;
