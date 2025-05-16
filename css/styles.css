@@ -22,12 +22,17 @@ body {
 
 /* Desktop nav links */
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background-color: #000;
+  width: 200px;
+  height: auto; /* Use auto height instead of full-screen */
+  max-height: 90vh; /* So it doesn't cover the full screen */
+  overflow-y: auto;
+  z-index: 1000; /* Keep it above content */
 }
+
 
 .nav-links a {
   color: white;
