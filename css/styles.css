@@ -210,9 +210,9 @@ h2 {
 }
 
 .project-content p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 0.5rem;
 }
 
 .project-content .btn {
@@ -222,6 +222,7 @@ h2 {
   padding: 8px 16px;
   border-radius: 5px;
   text-decoration: none;
+  margin-top: 0;
 }
 
 .project-content .btn:hover {
